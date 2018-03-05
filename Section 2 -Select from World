@@ -23,3 +23,13 @@ WHERE population >=200000000
 11. SELECT name, capital
     FROM world
     WHERE length(name)=LENGTH(capital)
+
+12. SELECT name, capital
+FROM world where name<>capital and LEFT(name,1) = LEFT(capital,1) 
+
+13. SELECT name
+   FROM world
+WHERE name LIKE '%a%'
+  AND name NOT LIKE '% %' and name like '%e%' and name like '%i%'
+and name like '%o%' and name like '%u%'
+
