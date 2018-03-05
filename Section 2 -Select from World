@@ -1,0 +1,25 @@
+// SQL code for the questions in the section Select from world
+1. SELECT name, continent, population FROM world
+
+2. SELECT name FROM world
+WHERE population >=200000000
+
+3. select name,gdp/population from world where population>=200000000
+
+4. select name, population/1000000 as 'Populatin in Millions' from world where continent='South America'
+
+5. select name,population from world where name in ('France','Germany','Italy')
+
+6. select name from world where name LIKE '%United%'
+
+7. select name, population, area from world where area>3000000 or population>250000000
+
+8. select name,population, area from world where population>250000000 xor area>3000000
+
+9. select name, round(population/1000000,2) as 'Population',round(gdp/1000000000,2) as 'gdp' from world where continent='South America'
+
+10. select name, round(gdp/population,-3) as 'per capita gdp' from world where gdp >=1000000000000
+
+11. SELECT name, capital
+    FROM world
+    WHERE length(name)=LENGTH(capital)
