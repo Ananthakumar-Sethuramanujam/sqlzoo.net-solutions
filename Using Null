@@ -1,0 +1,36 @@
+// Solutions for the section Using Null
+1. select name from teacher where dept is null
+
+2. SELECT teacher.name, dept.name
+ FROM teacher INNER JOIN dept
+           ON (teacher.dept=dept.id)
+
+3. SELECT teacher.name, dept.name
+ FROM teacher LEFT JOIN dept
+           ON (teacher.dept=dept.id)
+          
+4. SELECT teacher.name, dept.name
+ FROM teacher RIGHT JOIN dept
+           ON (teacher.dept=dept.id)
+       
+5. select name, COALESCE(mobile,'07986 444 2266') from teacher
+
+6. select teacher.name, COALESCE(dept.name,'None') from teacher LEFT Join dept on teacher.dept=dept.id
+
+7. select count(name),count(mobile) from teacher
+
+8. select dept.name,count(teacher.name) from teacher right join dept on teacher.dept=dept.id group by dept.name
+
+9. select teacher.name,CASE
+          WHEN teacher.dept in (1,2) THEN 'Sci'
+          ELSE 'Art' END
+ from teacher
+ 
+10. select teacher.name,
+case 
+when teacher.dept in (1,2) then 'Sci'
+when teacher.dept in (3) then 'Art'
+else 'None'
+end
+from teacher
+
